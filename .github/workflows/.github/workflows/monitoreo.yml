@@ -1,0 +1,34 @@
+name: Monitoreo de Saldos 24/7
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 8:00 AM y 5:00 PM (13:00 y 22:00 UTC)
+    - cron: '0 13,22 * * *'
+  workflow_dispatch: # Botón para probarlo manualmente cuando quieras
+
+jobs:
+  ejecutar-monitoreo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar código del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Consultar APIs y verificar saldos
+      env:
+        OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        CAPSOLVER_API_KEY: ${{ secrets.CAPSOLVER_API_KEY }}
+        TWOCAPTCHA_API_KEY: ${{ secrets.TWOCAPTCHA_API_KEY }}
+        DECODO_API_KEY: ${{ secrets.DECODO_API_KEY }}
+      run: |
+        python monitor_central.py
