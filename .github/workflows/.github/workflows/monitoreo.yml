@@ -4,7 +4,7 @@ on:
   schedule:
     # Se ejecuta todos los días a las 8:00 AM y 5:00 PM (13:00 y 22:00 UTC)
     - cron: '0 13,22 * * *'
-  workflow_dispatch: # Botón para probarlo manualmente cuando quieras
+  workflow_dispatch: # Permite ejecutarlo manualmente cuando quieras
 
 jobs:
   ejecutar-monitoreo:
