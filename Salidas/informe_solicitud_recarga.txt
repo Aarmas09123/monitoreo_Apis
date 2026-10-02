@@ -1,0 +1,23 @@
+INFORME EJECUTIVO: SOLICITUD DE RECARGA DE PRESUPUESTO - INFRAESTRUCTURA DE APIs
+Fecha/hora de emision: 2026-10-02 (generado tras reporte de 2026-10-02 22:08:07)
+Origen: Monitoreo automatizado GitHub Actions 24/7 (repositorio monitoreo_Apis)
+
+1. RESUMEN EJECUTIVO
+El saldo de OpenRouter (USD 19.98) cayo por debajo del umbral minimo operativo de USD 20.00. El resto de servicios se mantiene sobre el umbral. CapSolver (USD 26.13) esta cerca del limite y debe vigilarse. Estado general: ALERTA.
+
+Saldos:
+- OpenRouter: USD 19.98 (BAJO UMBRAL)
+- CapSolver: USD 26.13 (margen +6.13)
+- 2Captcha: USD 85.27
+- DeCodo: USD 50.00
+
+2. DETALLE DE SALDO CRITICO
+Servicio afectado: OpenRouter
+Saldo restante: USD 19.98
+Monto sugerido: recarga de USD 80.00 para llevarlo a un saldo seguro de aprox. USD 100.00 (monto sugerido, sujeto a criterio de finanzas segun el consumo historico).
+
+3. IMPACTO EN PRODUCCION
+Si el saldo se agota, se interrumpiran las llamadas a modelos de IA via OpenRouter, afectando los procesos automatizados que dependen de ellas (errores de API / fallos en flujos). CapSolver, de no recargarse, podria afectar la validacion de captchas en un plazo mas corto; no se detecta alerta en proxies (DeCodo) ni en 2Captcha.
+
+4. RESOLUCION
+Se solicita a Finanzas/Administracion la aprobacion de fondos para recargar OpenRouter (USD 80.00 sugeridos) y, de forma preventiva, evaluar una recarga de CapSolver.
