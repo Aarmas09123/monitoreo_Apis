@@ -40,6 +40,14 @@ jobs:
       run: |
         python monitor_central.py
 
+    - name: Enviar informe por correo (WorkMail)
+      continue-on-error: true # Un fallo en el correo no detendrá el guardado de reportes
+      env:
+        WORKMAIL_USER: ${{ secrets.WORKMAIL_USER }}
+        WORKMAIL_PASS: ${{ secrets.WORKMAIL_PASS }}
+      run: |
+        python enviar_correo.py
+
     - name: Commit y Push de reportes
       run: |
         git config --local user.email "action@github.com"
