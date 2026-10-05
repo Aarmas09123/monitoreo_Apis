@@ -5,11 +5,17 @@ on:
     - cron: '0 13,22 * * *'
   workflow_dispatch:
 
+# Cancela ejecuciones anteriores colgadas o en progreso si lanzas una nueva
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ejecutar-monitoreo:
     runs-on: ubuntu-latest
+    timeout-minutes: 5 # Evita que se quede colgado indefinidamente si falla
     permissions:
-      contents: write # Permite a GitHub Actions guardar archivos en el repositorio
+      contents: write # Permite guardar el archivo de reportes en el repositorio
 
     steps:
     - name: Descargar código del repositorio
