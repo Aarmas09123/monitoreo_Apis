@@ -7,7 +7,7 @@ on:
 
 jobs:
   ejecutar-monitoreo:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write # Permite a GitHub Actions guardar archivos en el repositorio
 
@@ -40,4 +40,4 @@ jobs:
         git config --local user.name "GitHub Action"
         git add Entradas/reporte_saldos.txt
         git commit -m "Actualizacion automatica de saldos [skip ci]" || exit 0
-        git push origin master
+        git push origin main
