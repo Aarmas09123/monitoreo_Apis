@@ -2,10 +2,9 @@ name: Monitoreo de Saldos 24/7
 
 on:
   schedule:
-    - cron: '0 13,22 * * *'
+    - cron: '0 21 * * *' # Ejecución automática 4:00 PM (Hora Ecuador / UTC-5)
   workflow_dispatch:
 
-# Cancela ejecuciones anteriores colgadas o en progreso si lanzas una nueva
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -13,9 +12,9 @@ concurrency:
 jobs:
   ejecutar-monitoreo:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # Evita que se quede colgado indefinidamente si falla
+    timeout-minutes: 5
     permissions:
-      contents: write # Permite guardar el archivo de reportes en el repositorio
+      contents: write
 
     steps:
     - name: Descargar código del repositorio
@@ -41,7 +40,7 @@ jobs:
         python monitor_central.py
 
     - name: Enviar informe por correo (WorkMail)
-      continue-on-error: true # Un fallo en el correo no detendrá el guardado de reportes
+      continue-on-error: true
       env:
         WORKMAIL_USER: ${{ secrets.WORKMAIL_USER }}
         WORKMAIL_PASS: ${{ secrets.WORKMAIL_PASS }}
