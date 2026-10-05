@@ -1,10 +1,10 @@
 === REVISIÓN DE SALDOS EN INFRAESTRUCTURA (NUBE) ===
-Fecha/Hora: 2026-10-05 22:34:21
+Fecha/Hora: 2026-10-05 22:48:19
 
 ESTADO DE SALDOS:
 - OpenRouter: $29.15 USD
-- CapSolver: $25.75 USD
-- 2Captcha: $83.92 USD
+- CapSolver: $25.74 USD
+- 2Captcha: $83.90 USD
 - DeCodo: $50.00 USD
 
 ALERTAS DETECTADAS:
