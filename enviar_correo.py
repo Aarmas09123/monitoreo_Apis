@@ -131,10 +131,10 @@ def construir_html(fecha, saldos, alertas, warning):
 <body style="margin:0;padding:0;background:#EEF2F7;font-family:Segoe UI,Helvetica,Arial,sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEF2F7;padding:24px 8px;"><tr><td align="center">
 <table role="presentation" class="wrap" width="640" cellpadding="0" cellspacing="0" style="width:640px;max-width:640px;background:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.08);">
-  <tr><td style="background:#0B1F3A;padding:24px 32px;">
-    <div style="font-size:12px;letter-spacing:2px;color:#7DD3FC;font-weight:700;">ANGIA TECH</div>
+  <tr><td style="background:#4C1D95;padding:24px 32px;">
+    <div style="font-size:12px;letter-spacing:2px;color:#DDD6FE;font-weight:700;">ANGIA TECH</div>
     <div style="font-size:22px;font-weight:700;color:#FFFFFF;margin-top:6px;">Informe de saldos de infraestructura</div>
-    <div style="font-size:13px;color:#CBD5E1;margin-top:6px;">Reporte generado: {escape(fecha)} &middot; Origen: GitHub Actions 24/7</div>
+    <div style="font-size:13px;color:#EDE9FE;margin-top:6px;">Reporte generado: {escape(fecha)} &middot; Origen: GitHub Actions 24/7</div>
   </td></tr>
   <tr><td style="padding:24px 32px 8px 32px;">
     <div style="border-left:5px solid {est_color};background:#F8FAFC;padding:14px 16px;border-radius:6px;">
@@ -150,7 +150,7 @@ def construir_html(fecha, saldos, alertas, warning):
   <tr><td style="padding:20px 32px 8px 32px;">
     <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:10px;">Detalle por servicio</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E2E8F0;border-radius:8px;border-collapse:separate;font-size:14px;">
-      <tr style="background:#0B1F3A;"><th align="left" style="padding:10px 14px;color:#fff;font-size:12px;">Servicio</th><th align="right" style="padding:10px 14px;color:#fff;font-size:12px;">Saldo</th><th align="right" style="padding:10px 14px;color:#fff;font-size:12px;">Margen vs $20</th><th style="padding:10px 14px;color:#fff;font-size:12px;">Estado</th></tr>
+      <tr style="background:#4C1D95;"><th align="left" style="padding:10px 14px;color:#fff;font-size:12px;">Servicio</th><th align="right" style="padding:10px 14px;color:#fff;font-size:12px;">Saldo</th><th align="right" style="padding:10px 14px;color:#fff;font-size:12px;">Margen vs $20</th><th style="padding:10px 14px;color:#fff;font-size:12px;">Estado</th></tr>
       {filas}
     </table>
   </td></tr>
